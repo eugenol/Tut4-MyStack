@@ -20,9 +20,12 @@ struct Node
 
 class STACK_API CStack {
 	int max_size;
+	int current_size;
+	struct Node* Head;
 public:
-	CStack(void);
+	CStack();
 	CStack(int sz);
+	~CStack();
 
 	bool Push(int);
 	bool Pop(int);
@@ -31,6 +34,6 @@ public:
 	bool isEmpty();
 };
 
-extern STACK_API int nStack;
+//extern STACK_API int nStack;
 
-STACK_API int fnStack(void);
+//STACK_API int fnStack(void);

@@ -16,7 +16,7 @@ namespace UnitTest
 		
 		TEST_METHOD(PushTest)
 		{
-			Stack TestStack(10);
+			CStack TestStack(10);
 			int pushval = 10;
 			bool result;
 
@@ -26,7 +26,7 @@ namespace UnitTest
 
 		TEST_METHOD(PopTest)
 		{
-			Stack TestStack(10);
+			CStack TestStack(10);
 			int pushval = 10;
 			int popval;
 			bool result;
@@ -39,7 +39,7 @@ namespace UnitTest
 
 		TEST_METHOD(PopEmptyTest)
 		{
-			Stack TestStack(10);
+			CStack TestStack(10);
 			int popval;
 			bool result;
 
@@ -49,7 +49,7 @@ namespace UnitTest
 
 		TEST_METHOD(PushFullTest)
 		{
-			Stack TestStack(10);
+			CStack TestStack(10);
 			bool result;
 
 			for (int i = 0; i < 12; i++)
