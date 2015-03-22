@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
+#include "../Stack/Stack.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -11,7 +12,7 @@ namespace UnitTest
 
 		TEST_METHOD(CreatStackTest)
 		{
-			Assert::AreEqual(1,1)
+			Assert::AreEqual(1, 1);
 		}
 		
 		TEST_METHOD(PushTest)
@@ -21,7 +22,7 @@ namespace UnitTest
 			bool result;
 
 			result = TestStack.Push(pushval);
-			Assert::AreEqual(result,false)
+			Assert::AreEqual(result, true);
 		}
 
 		TEST_METHOD(PopTest)
@@ -32,8 +33,8 @@ namespace UnitTest
 			bool result;
 
 			result = TestStack.Push(pushval);
-			result = TestStack.Pop(pushval);
-			Assert::AreEqual(result, false);
+			result = TestStack.Pop(popval);
+			Assert::AreEqual(result, true);
 			Assert::AreEqual(popval, pushval);
 		}
 
@@ -44,7 +45,7 @@ namespace UnitTest
 			bool result;
 
 			result = TestStack.Pop(popval);
-			Assert::AreEqual(result, true);
+			Assert::AreEqual(result, false);
 		}
 
 		TEST_METHOD(PushFullTest)
@@ -52,13 +53,14 @@ namespace UnitTest
 			CStack TestStack(10);
 			bool result;
 
-			for (int i = 0; i < 12; i++)
+			for (int i = 0; i < 10; i++)
 			{
-				result = TestStack.Push(i);
-				Assert::AreEqual(result, true);
+				TestStack.Push(i);
 			}
-		}
+			result = TestStack.Push(10);
+			Assert::AreEqual(result, false);
 
+		}
 
 
 	};

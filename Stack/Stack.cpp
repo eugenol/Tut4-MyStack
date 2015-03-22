@@ -43,6 +43,7 @@ bool CStack::Push(const int& value)
 		curr->value = value;
 		curr->Prev = Head;
 		Head = curr;
+		current_size++;
 		return true;
 	}
 	else

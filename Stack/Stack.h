@@ -19,6 +19,7 @@ struct Node
 };
 
 class STACK_API CStack {
+private:
 	int max_size;
 	int current_size;
 	struct Node* Head;
