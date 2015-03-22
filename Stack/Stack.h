@@ -11,10 +11,24 @@
 #endif
 
 // This class is exported from the Stack.dll
+
+struct Node
+{
+	int value;
+	struct Node* Prev;
+};
+
 class STACK_API CStack {
+	int max_size;
 public:
 	CStack(void);
-	// TODO: add your methods here.
+	CStack(int sz);
+
+	bool Push(int);
+	bool Pop(int);
+	bool Peek(int);
+	bool isFull();
+	bool isEmpty();
 };
 
 extern STACK_API int nStack;
