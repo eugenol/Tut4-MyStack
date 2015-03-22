@@ -35,14 +35,28 @@ CStack::~CStack()
 	Head = NULL;
 }
 
-bool CStack::Push(int value)
+bool CStack::Push(const int& value)
 {
-	if (max_size != -1 && current_size < max_size)
+	if (!isFull())
 	{
 		struct Node* curr = new Node;
 		curr->value = value;
 		curr->Prev = Head;
 		Head = curr;
+		return true;
+	}
+	else
+		return false;
+}
+
+bool CStack::Pop(int& value)
+{
+	if (!isEmpty())
+	{
+		struct Node* curr = Head;
+		Head = curr->Prev;
+		value = curr->value;
+		delete curr;
 		return true;
 	}
 	else

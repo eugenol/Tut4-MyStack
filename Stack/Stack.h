@@ -27,8 +27,8 @@ public:
 	CStack(int sz);
 	~CStack();
 
-	bool Push(int);
-	bool Pop(int);
+	bool Push(const int&);
+	bool Pop(int&);
 	bool Peek(int);
 	bool isFull();
 	bool isEmpty();
