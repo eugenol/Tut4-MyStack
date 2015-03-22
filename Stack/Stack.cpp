@@ -62,3 +62,31 @@ bool CStack::Pop(int& value)
 	else
 		return false;
 }
+
+bool CStack::Peek(int& value)
+{
+	if (!isEmpty())
+	{
+		struct Node* curr = Head;
+		value = curr->value;
+		return true;
+	}
+	else
+		return false;
+}
+
+bool CStack::isFull()
+{
+	if (current_size == max_size)
+		return true;
+	else
+		return false;
+}
+
+bool CStack::isEmpty()
+{
+	if (Head == NULL)
+		return true;
+	else
+		return false;
+}

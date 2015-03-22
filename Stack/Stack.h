@@ -29,7 +29,7 @@ public:
 
 	bool Push(const int&);
 	bool Pop(int&);
-	bool Peek(int);
+	bool Peek(int&);
 	bool isFull();
 	bool isEmpty();
 };
