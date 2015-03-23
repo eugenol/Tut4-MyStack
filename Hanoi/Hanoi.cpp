@@ -12,7 +12,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	for (int i = 5; i > 0; i--)
 		a.Push(i);
 
-	while (!a.isEmpty)
+	while (!a.isEmpty())
 	{
 
 	}

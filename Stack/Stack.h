@@ -10,19 +10,25 @@
 #define STACK_API __declspec(dllimport)
 #endif
 
+#include "Node.h"
+
 // This class is exported from the Stack.dll
 
-struct Node
+/*
+// Use node object instead.
+struct oldNode
 {
 	int value;
 	struct Node* Prev;
 };
 
+*/
+
 class STACK_API CStack {
 private:
 	int max_size;
 	int current_size;
-	struct Node* Head;
+	Node* Head;
 public:
 	CStack();
 	CStack(int sz);

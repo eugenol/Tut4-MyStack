@@ -20,28 +20,26 @@ CStack::CStack()
 {
 	max_size = -1;
 	current_size = 0;
-	Head = NULL;
+	Head = nullptr;
 }
 
 CStack::CStack(int sz)
 {
 	max_size = sz;
 	current_size = 0;
-	Head = NULL;
+	Head = nullptr;
 }
 
 CStack::~CStack()
 {
-	Head = NULL;
+	Head = nullptr;
 }
 
 bool CStack::Push(const int& value)
 {
 	if (!isFull())
 	{
-		struct Node* curr = new Node;
-		curr->value = value;
-		curr->Prev = Head;
+		Node* curr = new Node(value, Head);
 		Head = curr;
 		current_size++;
 		return true;
@@ -54,9 +52,9 @@ bool CStack::Pop(int& value)
 {
 	if (!isEmpty())
 	{
-		struct Node* curr = Head;
-		Head = curr->Prev;
-		value = curr->value;
+		Node* curr = Head;
+		Head = curr->getPrevious();
+		value = curr->getValue();
 		delete curr;
 		return true;
 	}
@@ -68,8 +66,8 @@ bool CStack::Peek(int& value)
 {
 	if (!isEmpty())
 	{
-		struct Node* curr = Head;
-		value = curr->value;
+		Node* curr = Head;
+		value = curr->getValue();
 		return true;
 	}
 	else
@@ -86,7 +84,7 @@ bool CStack::isFull()
 
 bool CStack::isEmpty()
 {
-	if (Head == NULL)
+	if (Head == nullptr)
 		return true;
 	else
 		return false;
